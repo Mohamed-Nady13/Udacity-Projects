@@ -79,7 +79,7 @@ section {
 .navbar__menu li {
     display: inline-block;
     font-weight: bold;
-    color: darksalmon
+    color: darksalmon;
 }
 
 .navbar__menu .menu__link {
@@ -94,6 +94,15 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar__menu li {
+        display: block;
+    }
+    main {
+        margin-top: 300px;
+    }
 }
 
 
