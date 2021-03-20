@@ -80,7 +80,7 @@ function scrollToElement(elementId) {
 // Scroll to section on link click
 
 // Set sections as active
-
+// this piece of code was inspired by : https://codepen.io/rpsthecoder/pen/pByZjR
 if (!!window.IntersectionObserver) {
     let observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
