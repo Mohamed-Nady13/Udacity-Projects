@@ -4,10 +4,15 @@
 
 * [Instructions](#instructions)
 
-## Instructions
-Test Test
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## About Project
 
-To get started, open `js/app.js` and start building out the app's functionality
+The main point of this project is to make the page more dynamic by automatic build navigation to facilitate browsing page sections.
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+Also, while users scroll the page, we make the section more prominent by applying custom style to the active section.
+
+## Built Using 
+
+* HTML
+* CSS
+* Java script
+* Markdown 
