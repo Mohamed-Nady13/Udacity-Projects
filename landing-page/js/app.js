@@ -82,3 +82,25 @@ function scrollToElement(elementId) {
 // Scroll to section on link click
 
 // Set sections as active
+
+if (!!window.IntersectionObserver) {
+    let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.className = "your-active-class";
+                    // console.log(entry);
+                    // entry.target.src = entry.target.dataset.src;
+                    // observer.unobserve(entry.target);
+                } else {
+                    entry.target.className = "";
+                }
+            });
+        }
+        // { rootMargin: "0px 0px -200px 0px" }
+    );
+
+    document.querySelectorAll('section')
+        .forEach(section => { observer.observe(section) });
+} else {
+    alert("this browser is not supported")
+}
