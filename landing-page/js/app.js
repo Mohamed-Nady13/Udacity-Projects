@@ -17,6 +17,7 @@
  * Define Global Variables
  * 
  */
+const sections = document.querySelectorAll('section');
 
 /**
  * End Global Variables
@@ -34,7 +35,7 @@
 
 // build the nav
 
-const sections = document.querySelectorAll('section');
+
 
 const frag = document.createDocumentFragment();
 
@@ -53,16 +54,13 @@ sections.forEach(element => {
 
     newLi.appendChild(anchor);
     frag.appendChild(newLi);
-    // myNav.appendChild(newLi);
 });
 
 const myNav = document.querySelector("#navbar__list");
 myNav.appendChild(frag);
 
-// Add class 'active' to section when near top of viewport
+// Scroll to anchor ID using scrollIntoView function
 
-
-// Scroll to anchor ID using scrollTO event
 function scrollToElement(elementId) {
     const element = document.querySelector("#" + elementId);
     element.scrollIntoView({
@@ -85,22 +83,16 @@ function scrollToElement(elementId) {
 
 if (!!window.IntersectionObserver) {
     let observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.className = "your-active-class";
-                    // console.log(entry);
-                    // entry.target.src = entry.target.dataset.src;
-                    // observer.unobserve(entry.target);
-                } else {
-                    entry.target.className = "";
-                }
-            });
-        }
-        // { rootMargin: "0px 0px -200px 0px" }
-    );
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.className = "your-active-class";
+            } else {
+                entry.target.className = "";
+            }
+        });
+    });
 
-    document.querySelectorAll('section')
-        .forEach(section => { observer.observe(section) });
+    sections.forEach(section => { observer.observe(section) });
 } else {
     alert("this browser is not supported")
 }

@@ -121,12 +121,25 @@ section {
 
 .page__footer {
     background: #000;
-    padding: 3em;
+    padding: 0.5em;
+    color: #fff;
+    position: relative;
+}
+
+.page__footer p,
+.page__footer a {
     color: #fff;
 }
 
-.page__footer p {
-    color: #fff;
+.top {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    padding: 5px;
+}
+
+.top a {
+    color: white
 }
 
 
